@@ -51,12 +51,13 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0";
-static const char *dmenucmd[] = { "rofi", "-show", "combi", NULL };
+
 static const char *termcmd[] = { "alacritty", NULL };
+static const char *dmenucmd[] = { "rofi", "-show", "combi", NULL };
 
 static const Key keys[] = {
-	{ MODKEY,                       XK_p,		spawn,			{.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return,	spawn,			{.v = termcmd } },
+	{ MODKEY,                       XK_p,		spawn,			{.v = dmenucmd } },
 	{ MODKEY,                       XK_j,		focusstack,		{.i = +1 } },
 	{ MODKEY,                       XK_k,		focusstack,		{.i = -1 } },
 	{ MODKEY,                       XK_comma,	focusmon,		{.i = -1 } },
