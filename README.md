@@ -6,7 +6,7 @@ Insieme a dwm, ho implementato altri programmi fondamentali per l'uso del sistem
 
 ## Prerequisiti
 
-**Premessa**, mi aspetto che questa guida la seguite, avendo sotto mano una installazione di **Arch Linux** completamente pulita.
+**Premessa**, mi aspetto che questa guida la seguite, avendo sotto mano una installazione di arch completamente pulita.
 Io personalmente per risparmiare tempo uso archinstall e ve lo consiglio.
 Nel caso l'unico pacchetto da avere insieme al sistema base, è un modo per connettersi al wifi, che sia con **Network Manager** (consigliato) o con **iwd** o addirittura con **wpa_supplicant**, l'importante è che funzioni per voi.  
 
@@ -17,7 +17,7 @@ Quì avete una lista di pacchetti da installare.
 sudo pacman -S wget curl git vim vi xorg-server xorg-xinit xorg-xsetroot xorg-xinput libinput libx11 libxinerama libxft webkit2gtk feh picom alacritty rofi
 ```
 
-Alcuni pacchetti opzionali che io personalmente uso sono:
+Alcuni pacchetti opzionali che io personalmente uso sono.
 
 ```sh
 sudo pacman -S cifs-utils openssh
@@ -31,20 +31,20 @@ sudo pacman -S noto-fonts ttf-firacode-nerd starship
 
 ## Installazione
 
-Per scaricare il codice, clonate la repository con git.
+Per scaricare il codice, clona la repository con git.
 
 ```sh
 git clone https://github.com/le0flo/dwm.git
 ```
 
-Successivamente, entrate nella repository scaricata ed eseguite il seguente comando.
+Successivamente, entra nella repository scaricata ed esegui il seguente comando.
 
 ```sh
 cd dwm
 sudo make clean install
 ```
 
-Il comando precedente dovrebbe aver installato dwm nel sistema. Per eseguirlo con **xinit**, inseririte il seguente codice nel file **.xinitrc** nella cartella home del vostro utente.
+Il comando precedente dovrebbe aver installato dwm nel sistema. Per eseguirlo con **xinit**, inserire il seguente codice nel file **.xinitrc** nella cartella home del vostro utente.
 
 ```sh
 # Avvia il compositor ed imposta lo sfondo, poi apre dwm
