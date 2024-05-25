@@ -53,7 +53,10 @@ Il comando precedente dovrebbe aver installato dwm nel sistema. Per eseguirlo co
 # così da evitare bug o lag spikes involontari. "Alla fine il compositor è soltanto bloat yk?"
 picom -b
 
-feh --no-fehbg --bg-fill "/home/user/.config/backgrounds/bg.jpg"
+# Crea la cartella in /usr/share di nome backgrounds e spostaci tutti i wallpapers che desideri,
+# poi per averli metti alla fine il nome dell'immagine. Commenta la linea per non avere lo sfondo.
+feh --no-fehbg --bg-fill "/usr/share/backgrounds/bg.jpg"
+
 exec dwm
 ```
 
