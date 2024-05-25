@@ -63,7 +63,7 @@ if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
 fi
 ```
 
-**Fix**, per risolvere alcuni problemi con programmi (e.g. IntelliJ IDEA), esporta la variabile di ambiente nel file **.bashrc** nella cartella home del vostro utente.
+**Fix**, per risolvere alcuni problemi con programmi (e.g. IntelliJ IDEA), esportate la variabile di ambiente nel file **.bashrc** nella cartella home del vostro utente.
 
 ```sh
 # Variabili di ambiente
