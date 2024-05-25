@@ -71,6 +71,15 @@ fi
 export _JAVA_AWT_WM_NONREPARENTING=1
 ```
 
+
+**Opzionale**, per usare il prompt custom di starship con la shell bash, inserite nel file **.bashrc** nella cartella home del vostro utente il seguente pezzo di codice.
+
+```sh
+# Starship
+
+eval "$(starship init bash)"
+```
+
 ## Configurazione
 
 Io come al solito incito alle persone di studiarsi i programmi e personalizzarseli a mano, ma capisco che non c'è sempre la voglia, parte del motivo per cui ho reso pubblica questa repo.
