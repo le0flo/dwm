@@ -20,7 +20,7 @@ sudo pacman -S wget curl git vim vi xorg-server xorg-xinit xorg-xsetroot xorg-xi
 Alcuni pacchetti opzionali che io personalmente uso sono.
 
 ```sh
-sudo pacman -S cifs-utils openssh imv mpv firefox keepassxc xfce4-screenshooter lxappearance
+sudo pacman -S unzip zip cifs-utils openssh imv mpv firefox keepassxc xfce4-screenshooter lxappearance
 ```
 
 **P.S.** Se volete un prompt di bash carino e cross-platform, vi consiglio starship.
@@ -47,9 +47,13 @@ sudo make clean install
 Il comando precedente dovrebbe aver installato dwm nel sistema. Per eseguirlo con **xinit**, inserire il seguente codice nel file **.xinitrc** nella cartella home del vostro utente.
 
 ```sh
-# Avvia il compositor ed imposta lo sfondo, poi apre dwm
+# Avvia compositor, sfondo e dwm
 
-picom -b && feh --no-fehbg --bg-fill "/home/user/.config/backgrounds/bg.jpg"
+# Commenta la linea di picom con un hashtag se usi una macchina virtuale oppure dell'hardware molto vecchio,
+# così da evitare bug o lag spikes involontari. "Alla fine il compositor è soltanto bloat yk?"
+picom -b
+
+feh --no-fehbg --bg-fill "/home/user/.config/backgrounds/bg.jpg"
 exec dwm
 ```
 
