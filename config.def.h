@@ -1,7 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const unsigned int borderpx = 0;
+static const unsigned int borderpx = 2;
 static const unsigned int gappx = 7;
 static const unsigned int snap = 10;
 static const int showbar = 0;
@@ -17,10 +17,11 @@ static const char col_gray2[] = "#444444";
 static const char col_gray3[] = "#bbbbbb";
 static const char col_gray4[] = "#eeeeee";
 static const char col_cyan[] = "#005577";
+static const char col_green[] = "#97bb72";
 
 static const char *colors[][3] = {
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
-	[SchemeSel]  = { col_gray4, col_cyan,  col_cyan  },
+	[SchemeSel]  = { col_gray4, col_green,  col_green  },
 };
 
 /* tagging */
