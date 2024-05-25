@@ -63,6 +63,14 @@ if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
 fi
 ```
 
+**Fix**, per risolvere alcuni problemi con programmi (e.g. IntelliJ IDEA), esporta la variabile di ambiente nel file **.bashrc** nella cartella home del vostro utente.
+
+```sh
+# Variabili di ambiente
+
+export _JAVA_AWT_WM_NONREPARENTING=1
+```
+
 ## Configurazione
 
 Io come al solito incito alle persone di studiarsi i programmi e personalizzarseli a mano, ma capisco che non c'è sempre la voglia, parte del motivo per cui ho reso pubblica questa repo.
