@@ -20,7 +20,7 @@ sudo pacman -S wget curl git vim vi xorg-server xorg-xinit xorg-xsetroot xorg-xi
 Alcuni pacchetti opzionali che io personalmente uso sono.
 
 ```sh
-sudo pacman -S unzip zip cifs-utils openssh imv mpv firefox keepassxc xfce4-screenshooter lxappearance
+sudo pacman -S unzip zip cifs-utils openssh imv mpv firefox keepassxc xfce4-screenshooter lxappearance papirus-icon-theme
 ```
 
 **P.S.** Se volete un prompt di bash carino e cross-platform, vi consiglio starship.
