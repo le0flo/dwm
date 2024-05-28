@@ -14,7 +14,7 @@ Prima di procedere all'installazione del window manager, dovrete installare i pa
 Quì avete una lista di pacchetti da installare.
 
 ```sh
-sudo pacman -S wget curl git vim vi xorg-server xorg-xinit xorg-xsetroot xorg-xinput libinput libx11 libxinerama libxft webkit2gtk feh picom alacritty rofi
+sudo pacman -S wget curl git vim vi xorg-server xorg-xinit xorg-xinput libinput libx11 libxinerama libxft webkit2gtk feh picom alacritty rofi
 ```
 
 Alcuni pacchetti opzionali che io personalmente uso sono.
