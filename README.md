@@ -75,6 +75,7 @@ fi
 ```sh
 # Variabili di ambiente
 
+export STARSHIP_CONFIG=~/.config/starship/starship.toml
 export _JAVA_AWT_WM_NONREPARENTING=1
 ```
 
@@ -92,11 +93,11 @@ eval "$(starship init bash)"
 Io come al solito incito alle persone di studiarsi i programmi e personalizzarseli a mano, ma capisco che non c'è sempre la voglia, parte del motivo per cui ho reso pubblica questa repo.
 Perciò ecco una lista di configurazioni che uso e tengo aggiornate.
 
-- Picom, [~/.config/picom.conf](https://files.le0nardo.dev/configs/picom.conf)
+- Picom, [~/.config/picom/picom.conf](https://files.le0nardo.dev/configs/picom.conf)
 
-- Alacritty, [~/.config/alacritty.toml](https://files.le0nardo.dev/configs/alacritty.toml)
+- Alacritty, [~/.config/alacritty/alacritty.toml](https://files.le0nardo.dev/configs/alacritty.toml)
 
-- Starship, [~/.config/starship.toml](https://files.le0nardo.dev/configs/starship.toml)
+- Starship, [~/.config/starship/starship.toml](https://files.le0nardo.dev/configs/starship.toml)
 
 - Vim, [~/.vimrc](https://files.le0nardo.dev/configs/_vimrc)
 
