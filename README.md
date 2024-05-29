@@ -16,11 +16,11 @@ Quì avete una lista di pacchetti da installare.
 ```sh
 # Arch linux
 
-sudo pacman -S wget curl git vim xorg-server xorg-xinit xorg-xinput libinput libx11 libxinerama libxft feh picom alacritty rofi
+sudo pacman -S wget curl git vim xorg-server xorg-xinit xorg-xinput libinput base-devel libx11 libxinerama libxft feh picom alacritty rofi
 
 # Void linux
 
-sudo xbps-install wget curl git vim base-devel libX11-devel libXft-devel libXinerama-devel feh picom alacritty rofi
+sudo xbps-install wget curl git vim xorg-server xinit xinput libinput base-devel libX11-devel libXft-devel libXinerama-devel feh picom alacritty rofi
 ```
 
 Alcuni pacchetti opzionali che io personalmente uso sono.
