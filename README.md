@@ -14,7 +14,7 @@ Prima di procedere all'installazione del window manager, dovrete installare i pa
 Quì avete una lista di pacchetti da installare.
 
 ```sh
-sudo pacman -S wget curl git vim vi xorg-server xorg-xinit xorg-xinput libinput libx11 libxinerama libxft webkit2gtk feh picom alacritty rofi
+sudo pacman -S wget curl git vim vi xorg-server xorg-xinit xorg-xinput libinput libx11 libxinerama libxft feh picom alacritty rofi
 ```
 
 Alcuni pacchetti opzionali che io personalmente uso sono.
@@ -88,6 +88,19 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 eval "$(starship init bash)"
 ```
 
+**Opzionale**, alcuni alias utili per miglioramenti nell'esperienza di utilizzo
+
+```sh
+# Aliases
+
+alias ls='ls --color=auto'
+alias ll='ls --color=auto -al'
+alias grep='grep --color=auto'
+alias ssh='TERM=xterm-256color ssh'
+alias shutdown='shutdown -h now'
+alias battery='upower -i $(upower -e | grep "BAT")'
+```
+
 ## Configurazione
 
 Io come al solito incito alle persone di studiarsi i programmi e personalizzarseli a mano, ma capisco che non c'è sempre la voglia, parte del motivo per cui ho reso pubblica questa repo.
@@ -102,6 +115,8 @@ Perciò ecco una lista di configurazioni che uso e tengo aggiornate.
 - Vim, [~/.vimrc](https://files.le0nardo.dev/configs/_vimrc)
 
 - Rofi, [~/.config/rofi/config.rasi](https://files.le0nardo.dev/configs/config.rasi)
+
+- Touchpad, [/etc/X11/xorg.conf.d/30-touchpad.conf](https://files.le0nardo.dev/configs/touchpad.conf)
 
 ## Problemi e domande
 
