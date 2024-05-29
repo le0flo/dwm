@@ -14,19 +14,37 @@ Prima di procedere all'installazione del window manager, dovrete installare i pa
 Quì avete una lista di pacchetti da installare.
 
 ```sh
-sudo pacman -S wget curl git vim vi xorg-server xorg-xinit xorg-xinput libinput libx11 libxinerama libxft feh picom alacritty rofi
+# Arch linux
+
+sudo pacman -S wget curl git vim xorg-server xorg-xinit xorg-xinput libinput libx11 libxinerama libxft feh picom alacritty rofi
+
+# Void linux
+
+sudo xbps-install wget curl git vim base-devel libX11-devel libXft-devel libXinerama-devel feh picom alacritty rofi
 ```
 
 Alcuni pacchetti opzionali che io personalmente uso sono.
 
 ```sh
+# Arch linux
+
 sudo pacman -S unzip zip cifs-utils openssh imv mpv htop firefox keepassxc xfce4-screenshooter lxappearance papirus-icon-theme
+
+# Void linux
+
+sudo xbps-install unzip zip cifs-utils openssh imv mpv htop firefox keepassxc xfce4-screenshooter lxappearance papirus-icon-theme
 ```
 
 **P.S.** Se volete un prompt di bash carino e cross-platform, vi consiglio starship.
 
 ```sh
+# Arch linux
+
 sudo pacman -S noto-fonts ttf-firacode-nerd starship
+
+# Void linux
+
+sudo xbps-install noto-fonts-ttf noto-fonts-emoji font-firacode starship
 ```
 
 ## Installazione
@@ -44,7 +62,13 @@ cd dwm
 sudo make clean install
 ```
 
-Il comando precedente dovrebbe aver installato dwm nel sistema. Per eseguirlo con **xinit**, inserire il seguente codice nel file **.xinitrc** nella cartella home del vostro utente.
+**Per Void linux**, bisogna modificare il file `config.mk` nella seguente maniera.
+
+1. Inserire alla fine del file `FREETYPEINC = ${X11INC}/freetype2`
+2. Cambiare `X11INC = usr/X11R6/include` a `X11INC = usr/X11R6/include`
+3. Cambiare `X11LIB = usr/X11R6/lib` a `X11LIB = usr/X11R6/lib`
+
+Il comando precedente dovrebbe aver installato dwm nel sistema. Per eseguirlo con **xinit**, inserire il seguente codice nel file `.xinitrc` nella cartella home del vostro utente.
 
 ```sh
 # Avvia compositor, sfondo e dwm
@@ -60,7 +84,7 @@ feh --no-fehbg --bg-fill "/usr/share/backgrounds/bg.jpg"
 exec dwm
 ```
 
-Per avviare **xinit** al login dell'utente, inserite questo snippet di codice nel file **.bash_profile** nella cartella home del vostro utente.
+Per avviare **xinit** al login dell'utente, inserite questo snippet di codice nel file `.bash_profile` nella cartella home del vostro utente.
 
 ```sh
 # Avvia X11
@@ -70,7 +94,7 @@ if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
 fi
 ```
 
-**Fix**, per risolvere alcuni problemi con programmi (e.g. IntelliJ IDEA), esportate la variabile di ambiente nel file **.bashrc** nella cartella home del vostro utente.
+**Fix**, per risolvere alcuni problemi con programmi (e.g. IntelliJ IDEA), esportate la variabile di ambiente nel file `.bashrc` nella cartella home del vostro utente.
 
 ```sh
 # Variabili di ambiente
@@ -80,7 +104,7 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 ```
 
 
-**Opzionale**, per usare il prompt custom di starship con la shell bash, inserite nel file **.bashrc** nella cartella home del vostro utente il seguente pezzo di codice.
+**Opzionale**, per usare il prompt custom di starship con la shell bash, inserite nel file `.bashrc` nella cartella home del vostro utente il seguente pezzo di codice.
 
 ```sh
 # Starship
@@ -88,7 +112,7 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 eval "$(starship init bash)"
 ```
 
-**Opzionale**, alcuni alias utili per miglioramenti nell'esperienza di utilizzo
+**Opzionale**, alcuni alias utili per miglioramenti nell'esperienza di utilizzo, da inserire nel `.bashrc`.
 
 ```sh
 # Aliases
