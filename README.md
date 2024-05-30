@@ -146,7 +146,7 @@ Perciò ecco una lista di configurazioni che uso e tengo aggiornate.
 - Touchpad, [`/etc/X11/xorg.conf.d/30-touchpad.conf`](https://files.le0nardo.dev/configs/touchpad.conf)
 
 Per avere l'orario nella barra, basta usare uno script che imposta il nome della finestra di dwm.
-Per fare ciò, come primo step assicuratevi di avere installato il comando `xsetroot`.
+Per fare ciò, come primo step assicuratevi di avere installato il comando xsetroot.
 
 ```sh 
 # Arch linux
