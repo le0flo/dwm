@@ -62,11 +62,13 @@ cd dwm
 sudo make clean install
 ```
 
-**Per Void linux**, bisogna modificare il file `config.mk` nella seguente maniera.
+Per Void Linux, bisogna modificare il file `config.mk` nella seguente maniera.
 
 1. Inserire alla fine del file `FREETYPEINC = ${X11INC}/freetype2`
 2. Cambiare `X11INC = usr/X11R6/include` a `X11INC = usr/X11R6/include`
 3. Cambiare `X11LIB = usr/X11R6/lib` a `X11LIB = usr/X11R6/lib`
+
+# Configurazione
 
 Il comando precedente dovrebbe aver installato dwm nel sistema. Per eseguirlo con **xinit**, inserire il seguente codice nel file `.xinitrc` nella cartella home del vostro utente.
 
@@ -94,7 +96,7 @@ if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
 fi
 ```
 
-**Fix**, per risolvere alcuni problemi con programmi (e.g. IntelliJ IDEA), esportate la variabile di ambiente nel file `.bashrc` nella cartella home del vostro utente.
+Per risolvere alcuni problemi con programmi (e.g. IntelliJ IDEA), esportate la variabile di ambiente nel file `.bashrc` nella cartella home del vostro utente.
 
 ```sh
 # Variabili di ambiente
@@ -103,8 +105,7 @@ export STARSHIP_CONFIG=~/.config/starship/starship.toml
 export _JAVA_AWT_WM_NONREPARENTING=1
 ```
 
-
-**Opzionale**, per usare il prompt custom di starship con la shell bash, inserite nel file `.bashrc` nella cartella home del vostro utente il seguente pezzo di codice.
+Per usare il prompt custom di starship con la shell bash, inserite nel file `.bashrc` nella cartella home del vostro utente il seguente pezzo di codice.
 
 ```sh
 # Starship
@@ -112,7 +113,7 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 eval "$(starship init bash)"
 ```
 
-**Opzionale**, alcuni alias utili per miglioramenti nell'esperienza di utilizzo, da inserire nel `.bashrc`.
+Alcuni alias utili per miglioramenti nell'esperienza di utilizzo, da inserire nel `.bashrc`.
 
 ```sh
 # Aliases
@@ -124,8 +125,6 @@ alias ssh='TERM=xterm-256color ssh'
 alias shutdown='shutdown -h now'
 alias battery='upower -i $(upower -e | grep "BAT")'
 ```
-
-## Configurazione
 
 Io come al solito incito alle persone di studiarsi i programmi e personalizzarseli a mano, ma capisco che non c'è sempre la voglia, parte del motivo per cui ho reso pubblica questa repo.
 Perciò ecco una lista di configurazioni che uso e tengo aggiornate.
@@ -141,6 +140,28 @@ Perciò ecco una lista di configurazioni che uso e tengo aggiornate.
 - Rofi, [~/.config/rofi/config.rasi](https://files.le0nardo.dev/configs/config.rasi)
 
 - Touchpad, [/etc/X11/xorg.conf.d/30-touchpad.conf](https://files.le0nardo.dev/configs/touchpad.conf)
+
+Per avere l'orario nella barra, basta usare uno script che imposta il nome della finestra di dwm.
+Per fare ciò, come primo step assicuratevi di avere installato il comando `xsetroot`.
+
+```sh 
+# Arch linux
+
+sudo pacman -S xorg-xsetroot
+
+# Void linux
+
+sudo xbps-install xsetroot
+```
+
+Usare crontab per eseguire costantemente il seguente script in background.
+
+```sh
+while true; do
+	xsetroot -name "$(date '+%H:%M:%S')"
+	sleep 1
+done
+```
 
 ## Problemi e domande
 
