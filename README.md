@@ -70,7 +70,7 @@ Per Void Linux, bisogna modificare il file `config.mk` nella seguente maniera.
 
 # Configurazione
 
-Il comando precedente dovrebbe aver installato dwm nel sistema. Per eseguirlo con **xinit**, inserire il seguente codice nel file `~/.xinitrc`.
+Il comando precedente dovrebbe aver installato dwm nel sistema. Per eseguirlo con xinit, inserire il seguente codice nel file `~/.xinitrc`.
 
 ```sh
 # Avvia compositor, sfondo, orologio e dwm
@@ -90,7 +90,7 @@ Il comando precedente dovrebbe aver installato dwm nel sistema. Per eseguirlo co
 exec dwm
 ```
 
-Per avviare **xinit** al login dell'utente, inserite questo snippet di codice nel file `~/.bash_profile`.
+Per avviare xinit al login dell'utente, inserite questo snippet di codice nel file `~/.bash_profile`.
 
 ```sh
 # Avvia X11
