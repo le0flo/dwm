@@ -167,6 +167,20 @@ while true; do
 done
 ```
 
+Per configurare un fileshare samba, appendete alla fine del file `/etc/fstab` le seguenti istruzioni.
+
+```fstab
+# Samba share
+//example.com/share	/mnt/privato	cifs	noauto,uid=user,credentials=/home/user/.config/smb/share.conf,x-systemd.automount,x-systemd.device-timeout=10	0 0
+```
+
+Successivamente salvare le credenziali nel file `~/.config/smb/share.conf`.
+
+```conf
+username=user
+password=password
+```
+
 ## Problemi e domande
 
 Se avete problemi, dubbi o domande in generale sul progetto, aprite una issue nella repository.
