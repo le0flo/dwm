@@ -35,7 +35,7 @@ sudo pacman -S unzip zip cifs-utils openssh imv mpv htop firefox keepassxc xfce4
 sudo xbps-install unzip zip cifs-utils openssh imv mpv htop firefox keepassxc xfce4-screenshooter lxappearance papirus-icon-theme
 ```
 
-**P.S.** Se volete un prompt di bash carino e cross-platform, vi consiglio starship.
+Se volete un prompt di bash carino e cross-platform, vi consiglio starship.
 
 ```sh
 # Arch linux
@@ -70,23 +70,27 @@ Per Void Linux, bisogna modificare il file `config.mk` nella seguente maniera.
 
 # Configurazione
 
-Il comando precedente dovrebbe aver installato dwm nel sistema. Per eseguirlo con **xinit**, inserire il seguente codice nel file `.xinitrc` nella cartella home del vostro utente.
+Il comando precedente dovrebbe aver installato dwm nel sistema. Per eseguirlo con **xinit**, inserire il seguente codice nel file `~/.xinitrc`.
 
 ```sh
-# Avvia compositor, sfondo e dwm
+# Avvia compositor, sfondo, orologio e dwm
 
-# Commenta la linea di picom con un hashtag se usi una macchina virtuale oppure dell'hardware molto vecchio,
-# così da evitare bug o lag spikes involontari. "Alla fine il compositor è soltanto bloat yk?"
-picom -b
+# Su alcuni pc si può sfruttare un compositor personalizzato, per finestre dai bordi rotondi e dagli sfondi trasparenti.
+# Rimuovi il commento per abilitare picom.
+#picom -b
 
-# Crea la cartella in /usr/share di nome backgrounds e spostaci tutti i wallpapers che desideri,
-# poi per averli metti alla fine il nome dell'immagine. Commenta la linea per non avere lo sfondo.
-feh --no-fehbg --bg-fill "/usr/share/backgrounds/bg.jpg"
+# Crea la cartella /usr/share/backgrounds e spostaci tutti i wallpapers che desideri, poi per averli metti alla fine il nome dell'immagine.
+# Rimuovi il commento per avere lo sfondo.
+#feh --no-fehbg --bg-fill "/usr/share/backgrounds/bg.jpg"
+
+# Crea la cartella /usr/share/dwm e crea il file time.sh, che puoi configurare in modo un messaggio personalizzato sulla barra del wm.
+# Rimuovi il commento per visualizzare l'orario.
+#/usr/share/dwm/time.sh >> /dev/null 2>&1 &
 
 exec dwm
 ```
 
-Per avviare **xinit** al login dell'utente, inserite questo snippet di codice nel file `.bash_profile` nella cartella home del vostro utente.
+Per avviare **xinit** al login dell'utente, inserite questo snippet di codice nel file `~/.bash_profile`.
 
 ```sh
 # Avvia X11
@@ -96,7 +100,7 @@ if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
 fi
 ```
 
-Per risolvere alcuni problemi con programmi (e.g. IntelliJ IDEA), esportate la variabile di ambiente nel file `.bashrc` nella cartella home del vostro utente.
+Per risolvere alcuni problemi con programmi (e.g. IntelliJ IDEA), esportate la variabile di ambiente nel file `~/.bashrc`.
 
 ```sh
 # Variabili di ambiente
@@ -105,7 +109,7 @@ export STARSHIP_CONFIG=~/.config/starship/starship.toml
 export _JAVA_AWT_WM_NONREPARENTING=1
 ```
 
-Per usare il prompt custom di starship con la shell bash, inserite nel file `.bashrc` nella cartella home del vostro utente il seguente pezzo di codice.
+Per usare il prompt custom di starship con la shell bash, inserite nel file `~/.bashrc`.
 
 ```sh
 # Starship
@@ -113,7 +117,7 @@ Per usare il prompt custom di starship con la shell bash, inserite nel file `.ba
 eval "$(starship init bash)"
 ```
 
-Alcuni alias utili per miglioramenti nell'esperienza di utilizzo, da inserire nel `.bashrc`.
+Alcuni alias utili per miglioramenti nell'esperienza di utilizzo, da inserire nel file `~/.bashrc`.
 
 ```sh
 # Aliases
@@ -129,17 +133,17 @@ alias battery='upower -i $(upower -e | grep "BAT")'
 Io come al solito incito alle persone di studiarsi i programmi e personalizzarseli a mano, ma capisco che non c'è sempre la voglia, parte del motivo per cui ho reso pubblica questa repo.
 Perciò ecco una lista di configurazioni che uso e tengo aggiornate.
 
-- Picom, [~/.config/picom/picom.conf](https://files.le0nardo.dev/configs/picom.conf)
+- Picom, [`~/.config/picom/picom.conf`](https://files.le0nardo.dev/configs/picom.conf)
 
-- Alacritty, [~/.config/alacritty/alacritty.toml](https://files.le0nardo.dev/configs/alacritty.toml)
+- Alacritty, [`~/.config/alacritty/alacritty.toml`](https://files.le0nardo.dev/configs/alacritty.toml)
 
-- Starship, [~/.config/starship/starship.toml](https://files.le0nardo.dev/configs/starship.toml)
+- Starship, [`~/.config/starship/starship.toml`](https://files.le0nardo.dev/configs/starship.toml)
 
-- Vim, [~/.vimrc](https://files.le0nardo.dev/configs/_vimrc)
+- Vim, [`~/.vimrc`](https://files.le0nardo.dev/configs/_vimrc)
 
-- Rofi, [~/.config/rofi/config.rasi](https://files.le0nardo.dev/configs/config.rasi)
+- Rofi, [`~/.config/rofi/config.rasi`](https://files.le0nardo.dev/configs/config.rasi)
 
-- Touchpad, [/etc/X11/xorg.conf.d/30-touchpad.conf](https://files.le0nardo.dev/configs/touchpad.conf)
+- Touchpad, [`/etc/X11/xorg.conf.d/30-touchpad.conf`](https://files.le0nardo.dev/configs/touchpad.conf)
 
 Per avere l'orario nella barra, basta usare uno script che imposta il nome della finestra di dwm.
 Per fare ciò, come primo step assicuratevi di avere installato il comando `xsetroot`.
@@ -154,7 +158,7 @@ sudo pacman -S xorg-xsetroot
 sudo xbps-install xsetroot
 ```
 
-Usare crontab per eseguire costantemente il seguente script in background.
+Mettere il seguente script nel file `/usr/share/dwm/time.sh` e togliere il commento nel file `~/.xinitrc` dove indicato.
 
 ```sh
 while true; do
