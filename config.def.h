@@ -4,7 +4,7 @@
 static const unsigned int borderpx = 2;
 static const unsigned int gappx = 7;
 static const unsigned int snap = 10;
-static const int showbar = 0;
+static const int showbar = 1;
 static const int topbar = 0;
 
 /* fonts */
