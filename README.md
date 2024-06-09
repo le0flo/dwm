@@ -17,10 +17,10 @@ Quì avete una lista di pacchetti da installare.
 sudo pacman -S base-devel xorg-server xorg-xinit xorg-xinput xorg-xsetroot libinput libx11 libxinerama libxft
 ```
 
-Alcuni pacchetti opzionali che io personalmente uso sono.
+In più ci sono i pacchetti non necessari per dwm ma necessari per la seguente configurazione.
 
 ```sh
-sudo pacman -S starship unzip zip picom alacritty cifs-utils openssh imv mpv htop firefox keepassxc rofi xfce4-screenshooter feh lxappearance papirus-icon-theme noto-fonts ttf-bigblueterminal-nerd upower fastfetch
+sudo pacman -S  cifs-utils openssh picom feh alacritty rofi noto-fonts ttf-bigblueterminal-nerd starship upower
 ```
 
 ## Installazione
@@ -133,7 +133,7 @@ done
 
 Per configurare un fileshare samba, appendete alla fine del file `/etc/fstab` le seguenti istruzioni.
 
-```fstab
+```conf
 # Samba share
 //example.com/share	/mnt/privato	cifs	noauto,uid=user,credentials=/home/user/.config/smb/share.conf,x-systemd.automount,x-systemd.device-timeout=10	0 0
 ```
@@ -149,9 +149,24 @@ password=password
 
 Se volete l'accent color per personalizzare altre applicazioni, eccolo quà.
 
-```
+```conf
 #97bb72
 ```
+
+# Software aggiuntivo
+
+Ovviamente la mia configurazione viene anche con il software che uso personalmente. Successivamente lascio un comando e una lista esaustiva dei pacchetti.
+
+```bash
+sudo pacman -S unzip zip p7zip fastfetch htop imv mpv lf firefox keepassxc
+```
+
+- unzip, zip, p7zip: Vari pacchetti per la gestione degli archivi
+- fastfetch, htop, scrot, [pacmixer](https://aur.archlinux.org/pacmixer.git): Strumenti CLI che si occupano di funzionalità base
+- imv mpv lf: Viewer di immagini, video e file manager
+- firefox: Browser
+- keepassxc: Password manager
+- [spotify](https://aur.archlinux.org/spotify.git), [spotx](https://github.com/SpotX-Official/SpotX-Bash), Music player
 
 # Problemi e domande
 
