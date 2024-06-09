@@ -8,8 +8,8 @@ static const int showbar = 1;
 static const int topbar = 0;
 
 /* fonts */
-static const char *fonts[] = { "firacode:size=10" };
-static const char dmenufont[] = "firacode:size=10";
+static const char *fonts[] = { "BigBlueTermPlus Nerd Font:size=8" };
+static const char dmenufont[] = "BigBlueTermPlus Nerd Font:size=8";
 
 /* colors */
 static const char col_gray1[] = "#222222";
