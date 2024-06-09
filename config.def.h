@@ -6,6 +6,7 @@ static const unsigned int gappx = 7;
 static const unsigned int snap = 10;
 static const int showbar = 1;
 static const int topbar = 0;
+static const int user_bh = 23;
 
 /* fonts */
 static const char *fonts[] = { "BigBlueTermPlus Nerd Font:size=8" };
