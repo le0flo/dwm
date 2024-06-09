@@ -158,7 +158,7 @@ Se volete l'accent color per personalizzare altre applicazioni, eccolo quà.
 Ovviamente la mia configurazione viene anche con il software che uso personalmente. Successivamente lascio un comando e una lista esaustiva dei pacchetti.
 
 ```bash
-sudo pacman -S unzip zip p7zip fastfetch htop imv mpv lf firefox keepassxc
+sudo pacman -S unzip zip p7zip fastfetch htop scrot imv mpv lf firefox keepassxc
 ```
 
 - unzip, zip, p7zip: Vari pacchetti per la gestione degli archivi
