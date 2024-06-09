@@ -56,6 +56,8 @@ static char dmenumon[2] = "0";
 
 static const char *termcmd[] = { "alacritty", NULL };
 static const char *dmenucmd[] = { "rofi", "-show", "drun", NULL };
+static const char *scrot[] = { "scrot", "/home/user/Pictures/\%Y-\%m-\%d_\%H-\%M-\%S.png", NULL };
+static const char *scrotarea[] = { "scrot", "/home/user/Pictures/\%Y-\%m-\%d_\%H-\%M-\%S.png", "-s", NULL };
 
 static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_Return,	spawn,			{.v = termcmd } },
@@ -68,6 +70,8 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_l,		setmfact,		{.f = +0.02} },
 	{ MODKEY,                       XK_t,		setlayout,		{.v = &layouts[0]} },
 	{ MODKEY,                       XK_f,		setlayout,		{.v = &layouts[1]} },
+	{ MODKEY,                       XK_Print,	spawn,			{.v = scrot } },
+	{ MODKEY|ShiftMask,             XK_Print,	spawn,			{.v = scrotarea } },
 	{ MODKEY,                       XK_Tab,		view,			{.ui = ~0 } },
 	{ MODKEY,                       XK_b,		togglebar,		{0} },
 	{ MODKEY|ShiftMask,             XK_k,		killclient,		{0} },
