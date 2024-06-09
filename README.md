@@ -107,6 +107,7 @@ Per risolvere alcuni problemi con programmi (e.g. IntelliJ IDEA), esportate la v
 
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
 export _JAVA_AWT_WM_NONREPARENTING=1
+export GIT_EDITOR=vim
 ```
 
 Per usare il prompt custom di starship con la shell bash, inserite nel file `~/.bashrc`.
