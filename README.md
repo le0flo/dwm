@@ -181,6 +181,12 @@ username=user
 password=password
 ```
 
+Se volete l'accent color per personalizzare altre applicazioni, eccolo quà.
+
+```
+#97bb72
+```
+
 ## Problemi e domande
 
 Se avete problemi, dubbi o domande in generale sul progetto, aprite una issue nella repository.
