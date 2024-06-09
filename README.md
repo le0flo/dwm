@@ -14,7 +14,7 @@ Prima di procedere all'installazione del window manager, dovrete installare i pa
 Quì avete una lista di pacchetti da installare.
 
 ```sh
-sudo pacman -S base-devel xorg-server xorg-xinit xorg-xinput libinput libx11 libxinerama libxft
+sudo pacman -S base-devel xorg-server xorg-xinit xorg-xinput xorg-xsetroot libinput libx11 libxinerama libxft
 ```
 
 Alcuni pacchetti opzionali che io personalmente uso sono.
@@ -120,19 +120,6 @@ Perciò ecco una lista di configurazioni che uso e tengo aggiornate.
 
 ### Orologio
 
-Per avere l'orario nella barra, basta usare uno script che imposta il nome della finestra di dwm.
-Per fare ciò, come primo step assicuratevi di avere installato il comando xsetroot.
-
-```sh 
-# Arch linux
-
-sudo pacman -S xorg-xsetroot
-
-# Void linux
-
-sudo xbps-install xsetroot
-```
-
 Mettere il seguente script nel file `/usr/share/dwm/time.sh` e togliere il commento nel file `~/.xinitrc` dove indicato.
 
 ```sh
@@ -166,6 +153,6 @@ Se volete l'accent color per personalizzare altre applicazioni, eccolo quà.
 #97bb72
 ```
 
-## Problemi e domande
+# Problemi e domande
 
 Se avete problemi, dubbi o domande in generale sul progetto, aprite una issue nella repository.
