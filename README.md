@@ -14,37 +14,13 @@ Prima di procedere all'installazione del window manager, dovrete installare i pa
 Quì avete una lista di pacchetti da installare.
 
 ```sh
-# Arch linux
-
-sudo pacman -S wget curl git vim xorg-server xorg-xinit xorg-xinput libinput base-devel libx11 libxinerama libxft feh picom alacritty rofi
-
-# Void linux
-
-sudo xbps-install wget curl git vim xorg-server xinit xinput libinput base-devel libX11-devel libXft-devel libXinerama-devel feh picom alacritty rofi
+sudo pacman -S base-devel xorg-server xorg-xinit xorg-xinput libinput libx11 libxinerama libxft
 ```
 
 Alcuni pacchetti opzionali che io personalmente uso sono.
 
 ```sh
-# Arch linux
-
-sudo pacman -S unzip zip cifs-utils openssh imv mpv htop firefox keepassxc xfce4-screenshooter lxappearance papirus-icon-theme
-
-# Void linux
-
-sudo xbps-install unzip zip cifs-utils openssh imv mpv htop firefox keepassxc xfce4-screenshooter lxappearance papirus-icon-theme
-```
-
-Se volete un prompt di bash carino e cross-platform, vi consiglio starship.
-
-```sh
-# Arch linux
-
-sudo pacman -S noto-fonts ttf-firacode-nerd starship
-
-# Void linux
-
-sudo xbps-install noto-fonts-ttf noto-fonts-emoji font-firacode starship
+sudo pacman -S feh picom alacritty rofi unzip zip cifs-utils openssh imv mpv htop firefox keepassxc xfce4-screenshooter lxappearance papirus-icon-theme noto-fonts ttf-firacode-nerd starship
 ```
 
 ## Installazione
@@ -61,12 +37,6 @@ Successivamente, entra nella repository scaricata ed esegui il seguente comando.
 cd dwm
 sudo make clean install
 ```
-
-Per Void Linux, bisogna modificare il file `config.mk` nella seguente maniera.
-
-1. Inserire alla fine del file `FREETYPEINC = ${X11INC}/freetype2`
-2. Cambiare `X11INC = usr/X11R6/include` a `X11INC = usr/X11R6/include`
-3. Cambiare `X11LIB = usr/X11R6/lib` a `X11LIB = usr/X11R6/lib`
 
 # Configurazione
 
