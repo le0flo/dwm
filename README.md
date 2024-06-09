@@ -146,6 +146,10 @@ Perciò ecco una lista di configurazioni che uso e tengo aggiornate.
 
 - Touchpad, [`/etc/X11/xorg.conf.d/30-touchpad.conf`](https://files.le0nardo.dev/configs/touchpad.conf)
 
+# Miglioramenti
+
+### Orologio
+
 Per avere l'orario nella barra, basta usare uno script che imposta il nome della finestra di dwm.
 Per fare ciò, come primo step assicuratevi di avere installato il comando xsetroot.
 
@@ -168,6 +172,8 @@ while true; do
 done
 ```
 
+### Samba share
+
 Per configurare un fileshare samba, appendete alla fine del file `/etc/fstab` le seguenti istruzioni.
 
 ```fstab
@@ -181,6 +187,8 @@ Successivamente salvare le credenziali nel file `~/.config/smb/share.conf`.
 username=user
 password=password
 ```
+
+### Colore
 
 Se volete l'accent color per personalizzare altre applicazioni, eccolo quà.
 
