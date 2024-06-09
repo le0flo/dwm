@@ -20,7 +20,7 @@ sudo pacman -S base-devel xorg-server xorg-xinit xorg-xinput xorg-xsetroot libin
 Alcuni pacchetti opzionali che io personalmente uso sono.
 
 ```sh
-sudo pacman -S feh picom alacritty rofi unzip zip cifs-utils openssh imv mpv htop firefox keepassxc xfce4-screenshooter lxappearance papirus-icon-theme noto-fonts ttf-firacode-nerd starship
+sudo pacman -S starship unzip zip picom alacritty cifs-utils openssh imv mpv htop firefox keepassxc rofi xfce4-screenshooter feh lxappearance papirus-icon-theme noto-fonts ttf-firacode-nerd upower
 ```
 
 ## Installazione
