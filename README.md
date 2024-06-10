@@ -8,7 +8,7 @@ Insieme a dwm, ho implementato altri programmi fondamentali per l'uso del sistem
 
 **Premessa**, mi aspetto che questa guida la seguite, avendo sotto mano una installazione di arch completamente pulita.
 Io personalmente per risparmiare tempo uso archinstall e ve lo consiglio.
-Nel caso gli unici pacchetti da avere insieme al sistema base, è un modo per connettersi al wifi, che sia con **Network Manager** (consigliato) o con **iwd** o addirittura con **wpa_supplicant**, l'importante è che funzioni per voi, git e vim.  
+Nel caso gli unici pacchetti da avere insieme al sistema base, è un modo per connettersi al wifi, che sia con **Network Manager** (consigliato) o con **iwd** o addirittura con **wpa_supplicant**, l'importante è che funzioni per voi, **git** e **vim**.  
 
 Prima di procedere all'installazione del window manager, dovrete installare i pacchetti necessari.
 Quì avete una lista di pacchetti da installare.
