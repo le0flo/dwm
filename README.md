@@ -129,6 +129,16 @@ while true; do
 done
 ```
 
+### Sfondi
+
+Creare la cartella `/usr/share/backgrounds` ed intestarla al proprio utente.
+
+```sh
+sudo chown -R user:user /usr/share/backgrounds
+```
+
+Una volta fatto, cercate l'immagine che preferite ed inseritela nella cartella. Per impostare tale immagine come sfondo basta cambiare la linea apposita nel file `~/.xinitrc`.
+
 ### Samba share
 
 Per configurare un fileshare samba, appendete alla fine del file `/etc/fstab` le seguenti istruzioni.
