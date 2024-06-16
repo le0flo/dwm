@@ -2,7 +2,7 @@
 
 Per avere la postazione più minimale, dwm era un "no brainer" in quanto personalizzazione, semplicità d'uso e in generale bellezza.
 Questa repository è il risultato della mia personalizzazione del progetto.
-Insieme a dwm, ho implementato altri programmi fondamentali per l'uso del sistema, come **alacritty** per il terminale e **rofi** come application launcher e **picom** come compositor delle finestre.
+Insieme a dwm, ho implementato altri programmi fondamentali per l'uso del sistema, come **alacritty** per il terminale, **dmenu** per application launcher e **picom** come compositor delle finestre.
 
 ## Prerequisiti
 
@@ -20,7 +20,7 @@ sudo pacman -S base-devel xorg-server xorg-xinit xorg-xinput xorg-xsetroot libin
 In più ci sono i pacchetti non necessari per dwm ma necessari per la seguente configurazione.
 
 ```sh
-sudo pacman -S  cifs-utils openssh picom feh alacritty rofi noto-fonts ttf-bigblueterminal-nerd starship upower papirus-icon-theme
+sudo pacman -S  cifs-utils openssh picom feh alacritty ttf-bigblueterminal-nerd
 ```
 
 ## Installazione
@@ -37,6 +37,10 @@ Successivamente, entra nella repository scaricata ed esegui il seguente comando.
 cd dwm
 sudo make clean install
 ```
+
+### Consigliato
+
+Questa personalizzazione di dwm utilizza dmenu per aprire le varie applicazioni, perciò consigio vivamente di scaricare ed installare la giusta versione di [dmenu quì](https://github.com/le0flo/dmenu) prima di continuare con la configurazione del wm.
 
 # Configurazione
 
@@ -75,17 +79,8 @@ Per risolvere alcuni problemi con programmi (e.g. IntelliJ IDEA), esportate la v
 ```sh
 # Variabili di ambiente
 
-export STARSHIP_CONFIG=~/.config/starship/starship.toml
 export _JAVA_AWT_WM_NONREPARENTING=1
 export GIT_EDITOR=vim
-```
-
-Per usare il prompt custom di starship con la shell bash, inserite nel file `~/.bashrc`.
-
-```sh
-# Starship
-
-eval "$(starship init bash)"
 ```
 
 Alcuni alias utili per miglioramenti nell'esperienza di utilizzo, da inserire nel file `~/.bashrc`.
@@ -98,21 +93,16 @@ alias ll='ls --color=auto -al'
 alias grep='grep --color=auto'
 alias ssh='TERM=xterm-256color ssh'
 alias shutdown='shutdown -h now'
-alias battery='upower -i $(upower -e | grep "BAT")'
 ```
 
 Io come al solito incito alle persone di studiarsi i programmi e personalizzarseli a mano, ma capisco che non c'è sempre la voglia, parte del motivo per cui ho reso pubblica questa repo.
 Perciò ecco una lista di configurazioni che uso e tengo aggiornate.
 
-- Picom, [`~/.config/picom/picom.conf`](https://files.le0nardo.dev/configs/picom.conf)
+- Vim, [`~/.vimrc`](https://files.le0nardo.dev/configs/_vimrc)
 
 - Alacritty, [`~/.config/alacritty/alacritty.toml`](https://files.le0nardo.dev/configs/alacritty.toml)
 
-- Starship, [`~/.config/starship/starship.toml`](https://files.le0nardo.dev/configs/starship.toml)
-
-- Vim, [`~/.vimrc`](https://files.le0nardo.dev/configs/_vimrc)
-
-- Rofi, [`~/.config/rofi/config.rasi`](https://files.le0nardo.dev/configs/config.rasi)
+- Picom, [`~/.config/picom/picom.conf`](https://files.le0nardo.dev/configs/picom.conf)
 
 - Touchpad, [`/etc/X11/xorg.conf.d/30-touchpad.conf`](https://files.le0nardo.dev/configs/touchpad.conf)
 
@@ -155,28 +145,20 @@ username=user
 password=password
 ```
 
-### Colore
-
-Se volete l'accent color per personalizzare altre applicazioni, eccolo quà.
-
-```conf
-#97bb72
-```
-
 # Software aggiuntivo
 
 Ovviamente la mia configurazione viene anche con il software che uso personalmente. Successivamente lascio un comando e una lista esaustiva dei pacchetti.
 
 ```bash
-sudo pacman -S unzip zip p7zip fastfetch htop scrot imv mpv lf firefox keepassxc
+sudo pacman -S unzip zip p7zip fastfetch htop scrot imv mpv mpd lf firefox keepassxc
 ```
 
 - unzip, zip, p7zip: Vari pacchetti per la gestione degli archivi
 - fastfetch, htop, scrot, [pacmixer](https://aur.archlinux.org/pacmixer.git): Strumenti CLI che si occupano di funzionalità base
-- imv mpv lf: Viewer di immagini, video e file manager
+- imv mpv mpd lf: Viewer di immagini, video, musica e file manager
 - firefox: Browser
 - keepassxc: Password manager
-- [spotify](https://aur.archlinux.org/spotify.git), [spotx](https://github.com/SpotX-Official/SpotX-Bash), Music player
+- [spotify](https://aur.archlinux.org/spotify.git), [spotx](https://github.com/SpotX-Official/SpotX-Bash), Spotify
 
 # Problemi e domande
 
