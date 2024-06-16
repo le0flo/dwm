@@ -77,6 +77,8 @@ fi
 Per avere un prompt carino, sostituisci la seguente linea nel file `~/.bashrc`.
 
 ```sh
+# Prompt
+
 PS1="\[$(tput setaf 106)\]\u\[$(tput setaf 142)\]@\[$(tput setaf 143)\]\h \[$(tput setaf 39)\]\w \[$(tput sgr0)\]$ "
 ```
 
