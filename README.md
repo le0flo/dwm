@@ -74,6 +74,12 @@ if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
 fi
 ```
 
+Per avere un prompt carino, sostituisci la seguente linea nel file `~/.bashrc`.
+
+```sh
+PS1="\[$(tput setaf 106)\]\u\[$(tput setaf 142)\]@\[$(tput setaf 143)\]\h \[$(tput setaf 39)\]\w \[$(tput sgr0)\]$ "
+```
+
 Per risolvere alcuni problemi con programmi (e.g. IntelliJ IDEA), esportate la variabile di ambiente nel file `~/.bashrc`.
 
 ```sh
