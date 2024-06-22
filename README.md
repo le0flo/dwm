@@ -42,7 +42,7 @@ sudo make clean install
 
 Questa personalizzazione di dwm utilizza dmenu per aprire le varie applicazioni, perciò consigio vivamente di scaricare ed installare la giusta versione di [dmenu quì](https://github.com/le0flo/dmenu) prima di continuare con la configurazione del wm.
 
-# Configurazione
+## Configurazione
 
 Il comando precedente dovrebbe aver installato dwm nel sistema. Per eseguirlo con xinit, inserire il seguente codice nel file `~/.xinitrc`.
 
@@ -114,7 +114,7 @@ Perciò ecco una lista di configurazioni che uso e tengo aggiornate.
 
 - Touchpad, [`/etc/X11/xorg.conf.d/30-touchpad.conf`](https://files.le0nardo.dev/configs/touchpad.conf)
 
-# Miglioramenti
+## Miglioramenti
 
 ### Orologio
 
@@ -153,7 +153,7 @@ username=user
 password=password
 ```
 
-# Software aggiuntivo
+## Software aggiuntivo
 
 Ovviamente la mia configurazione viene anche con il software che uso personalmente. Successivamente lascio un comando e una lista esaustiva dei pacchetti.
 
