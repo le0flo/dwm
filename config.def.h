@@ -9,8 +9,7 @@ static const int topbar = 0;
 static const int user_bh = 0;
 
 /* fonts */
-static const char *fonts[] = { "FiraCode Nerd Font Mono:size=12" };
-static const char dmenufont[] = "FiraCode Nerd Font Mono:size=12";
+static const char *fonts[] = { "FiraCode Nerd Font Mono:style=Medium:size=12" };
 
 /* colors */
 static const char col_gray1[] = "#222222";
