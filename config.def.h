@@ -22,7 +22,7 @@ static const char col_green[] = "#97bb72";
 
 static const char *colors[][3] = {
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
-	[SchemeSel]  = { col_gray4, col_green,  col_green  },
+	[SchemeSel]  = { col_gray1, col_green,  col_green  },
 };
 
 /* tagging */
