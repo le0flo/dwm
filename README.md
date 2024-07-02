@@ -20,7 +20,7 @@ sudo pacman -S base-devel xorg-server xorg-xinit xorg-xinput xorg-xsetroot libin
 In più ci sono i pacchetti non necessari per dwm ma necessari per la seguente configurazione.
 
 ```sh
-sudo pacman -S  cifs-utils openssh picom feh alacritty dex ttf-bigblueterminal-nerd
+sudo pacman -S  cifs-utils openssh picom feh alacritty dex ttf-firacode-nerd
 ```
 
 ## Installazione
