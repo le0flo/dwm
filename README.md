@@ -122,7 +122,7 @@ Mettere il seguente script nel file `/usr/share/dwm/time.sh` e togliere il comme
 
 ```sh
 while true; do
-	xsetroot -name "$(date '+%H:%M:%S')"
+	xsetroot -name "⏰ $(date '+%H:%M:%S')"
 	sleep 1
 done
 ```
