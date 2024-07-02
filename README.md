@@ -79,7 +79,7 @@ Per avere un prompt carino, sostituisci la seguente linea nel file `~/.bashrc`.
 ```sh
 # Prompt
 
-PS1="\[$(tput setaf 106)\]\u\[$(tput setaf 142)\]@\[$(tput setaf 143)\]\h \[$(tput setaf 39)\]\w \[$(tput sgr0)\]$ "
+PS1="\[\e[01;38;5;106m\]\u\[\e[01;38;5;142m\]@\[\e[01;38;5;143m\]\h \[\e[01;38;5;39m\]\w \[\033[00;0m\]$ "
 ```
 
 Per risolvere alcuni problemi con programmi (e.g. IntelliJ IDEA), esportate la variabile di ambiente nel file `~/.bashrc`.
