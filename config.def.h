@@ -53,7 +53,7 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0";
 
-static const char *termcmd[] = { "alacritty", NULL };
+static const char *termcmd[] = { "kitty", NULL };
 static const char *dmenucmd[] = { "dmenu_drun", "-c", "-l", "10", "-m", dmenumon, NULL };
 static const char *scrot[] = { "scrot", "/home/user/Pictures/\%Y-\%m-\%d_\%H-\%M-\%S.png", NULL };
 static const char *scrotarea[] = { "scrot", "/home/user/Pictures/\%Y-\%m-\%d_\%H-\%M-\%S.png", "-s", NULL };
