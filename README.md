@@ -20,7 +20,7 @@ sudo pacman -S base-devel xorg-server xorg-xinit xorg-xinput xorg-xsetroot libin
 In più ci sono i pacchetti non necessari per dwm ma necessari per la seguente configurazione.
 
 ```sh
-sudo pacman -S  cifs-utils openssh picom feh alacritty dex ttf-firacode-nerd
+sudo pacman -S  cifs-utils openssh picom feh kitty dex ttf-firacode-nerd
 ```
 
 ## Installazione
@@ -108,7 +108,7 @@ Perciò ecco una lista di configurazioni che uso e tengo aggiornate.
 
 - Vim, [`~/.vimrc`](https://files.le0nardo.dev/configs/_vimrc)
 
-- Alacritty, [`~/.config/alacritty/alacritty.toml`](https://files.le0nardo.dev/configs/alacritty.toml)
+- Kitty, [`~/.config/kitty/kitty.conf`](https://files.le0nardo.dev/configs/kitty.conf)
 
 - Picom, [`~/.config/picom/picom.conf`](https://files.le0nardo.dev/configs/picom.conf)
 
