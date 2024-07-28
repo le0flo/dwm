@@ -20,7 +20,7 @@ sudo pacman -S base-devel xorg-server xorg-xinit xorg-xinput xorg-xsetroot libin
 In più ci sono i pacchetti non necessari per dwm ma necessari per la seguente configurazione.
 
 ```sh
-sudo pacman -S  cifs-utils openssh picom feh kitty dex ttf-firacode-nerd
+sudo pacman -S cifs-utils openssh picom feh kitty dex ttf-firacode-nerd
 ```
 
 ## Installazione
@@ -158,12 +158,12 @@ password=password
 Ovviamente la mia configurazione viene anche con il software che uso personalmente. Successivamente lascio un comando e una lista esaustiva dei pacchetti.
 
 ```bash
-sudo pacman -S unzip zip p7zip fastfetch htop scrot imv mpv mpd lf firefox keepassxc
+sudo pacman -S unzip zip p7zip fastfetch htop scrot imv mpv mpd yazi firefox keepassxc
 ```
 
 - unzip, zip, p7zip: Vari pacchetti per la gestione degli archivi
 - fastfetch, htop, scrot, [pacmixer](https://aur.archlinux.org/pacmixer.git): Strumenti CLI che si occupano di funzionalità base
-- imv mpv mpd lf: Viewer di immagini, video, musica e file manager
+- imv mpv mpd yazi: Viewer di immagini, video, musica e file manager
 - firefox: Browser
 - keepassxc: Password manager
 - [spotify](https://aur.archlinux.org/spotify.git), [spotx](https://github.com/SpotX-Official/SpotX-Bash), Spotify
