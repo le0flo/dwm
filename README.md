@@ -1,37 +1,22 @@
 # 👨‍💻 Dynamic Window Manager
 
-Per avere la postazione più minimale, dwm era un "no brainer" in quanto personalizzazione, semplicità d'uso e in generale bellezza.
-Questa repository è il risultato della mia personalizzazione del progetto.
-Insieme a dwm, ho implementato altri programmi fondamentali per l'uso del sistema, come **alacritty** per il terminale, **dmenu** per application launcher e **picom** come compositor delle finestre.
+Un window manager minimale e personalizzabile
 
-## Prerequisiti
+## Prerequisiti 
 
-**Premessa**, mi aspetto che questa guida la seguite, avendo sotto mano una installazione di arch completamente pulita.
-Io personalmente per risparmiare tempo uso archinstall e ve lo consiglio.
-Nel caso gli unici pacchetti da avere insieme al sistema base, è un modo per connettersi al wifi, che sia con **Network Manager** (consigliato) o con **iwd** o addirittura con **wpa_supplicant**, l'importante è che funzioni per voi, **git** e **vim**.  
-
-Prima di procedere all'installazione del window manager, dovrete installare i pacchetti necessari.
-Quì avete una lista di pacchetti da installare.
+Quà sotto trovate una lista di pacchetti per la compilazione
 
 ```sh
 sudo pacman -S base-devel xorg-server xorg-xinit xorg-xinput xorg-xsetroot libinput libx11 libxinerama libxft
 ```
 
-In più ci sono i pacchetti non necessari per dwm ma necessari per la seguente configurazione.
+Quà invece una serie di pacchetti necessari per questa build di dwm
 
 ```sh
-sudo pacman -S cifs-utils openssh picom feh kitty dex ttf-firacode-nerd
+sudo pacman -S kitty feh dex ttf-firacode-nerd
 ```
 
 ## Installazione
-
-Per scaricare il codice, clona la repository con git.
-
-```sh
-git clone https://github.com/le0flo/dwm.git
-```
-
-Successivamente, entra nella repository scaricata ed esegui il seguente comando.
 
 ```sh
 cd dwm
@@ -47,19 +32,14 @@ Questa personalizzazione di dwm utilizza dmenu per aprire le varie applicazioni,
 Il comando precedente dovrebbe aver installato dwm nel sistema. Per eseguirlo con xinit, inserire il seguente codice nel file `~/.xinitrc`.
 
 ```sh
-# Avvia compositor, sfondo, orologio e dwm
-
-# Su alcuni pc si può sfruttare un compositor personalizzato, per finestre dai bordi rotondi e dagli sfondi trasparenti.
-# Rimuovi il commento per abilitare picom.
+# Compositor
 #picom -b
 
-# Crea la cartella /usr/share/backgrounds e spostaci tutti i wallpapers che desideri, poi per averli metti alla fine il nome dell'immagine.
-# Rimuovi il commento per avere lo sfondo.
-#feh --no-fehbg --bg-fill "/usr/share/backgrounds/bg.jpg"
+# Sfondi
+#feh --no-fehbg --bg-fill "/var/backgrounds/bg.jpg"
 
-# Crea la cartella /usr/share/dwm e crea il file time.sh, che puoi configurare in modo un messaggio personalizzato sulla barra del wm.
-# Rimuovi il commento per visualizzare l'orario.
-#/usr/share/dwm/time.sh >> /dev/null 2>&1 &
+# Status
+#/var/dwm/time.sh >> /dev/null 2>&1 &
 
 exec dwm
 ```
@@ -104,7 +84,7 @@ alias shutdown='shutdown -h now'
 ```
 
 Io come al solito incito alle persone di studiarsi i programmi e personalizzarseli a mano, ma capisco che non c'è sempre la voglia, parte del motivo per cui ho reso pubblica questa repo.
-Perciò ecco una lista di configurazioni che uso e tengo aggiornate.
+Detto questo, ecco una lista di configurazioni che uso e tengo aggiornate.
 
 - Vim, [`~/.vimrc`](https://files.le0nardo.dev/configs/_vimrc)
 
@@ -118,7 +98,7 @@ Perciò ecco una lista di configurazioni che uso e tengo aggiornate.
 
 ### Orologio
 
-Mettere il seguente script nel file `/usr/share/dwm/time.sh` e togliere il commento nel file `~/.xinitrc` dove indicato.
+Mettere il seguente script nel file `/var/dwm/time.sh` e togliere il commento nel file `~/.xinitrc` dove indicato.
 
 ```sh
 while true; do
@@ -129,10 +109,10 @@ done
 
 ### Sfondi
 
-Creare la cartella `/usr/share/backgrounds` ed intestarla al proprio utente.
+Creare la cartella `/var/backgrounds` ed intestarla al proprio utente.
 
 ```sh
-sudo chown -R user:user /usr/share/backgrounds
+sudo chown -R user:user /var/backgrounds
 ```
 
 Una volta fatto, cercate l'immagine che preferite ed inseritela nella cartella. Per impostare tale immagine come sfondo basta cambiare la linea apposita nel file `~/.xinitrc`.
@@ -152,21 +132,6 @@ Successivamente salvare le credenziali nel file `~/.config/smb/share.conf`.
 username=user
 password=password
 ```
-
-## Software aggiuntivo
-
-Ovviamente la mia configurazione viene anche con il software che uso personalmente. Successivamente lascio un comando e una lista esaustiva dei pacchetti.
-
-```bash
-sudo pacman -S unzip zip p7zip fastfetch htop scrot imv mpv mpd yazi firefox keepassxc
-```
-
-- unzip, zip, p7zip: Vari pacchetti per la gestione degli archivi
-- fastfetch, htop, scrot, [pacmixer](https://aur.archlinux.org/pacmixer.git): Strumenti CLI che si occupano di funzionalità base
-- imv mpv mpd yazi: Viewer di immagini, video, musica e file manager
-- firefox: Browser
-- keepassxc: Password manager
-- [spotify](https://aur.archlinux.org/spotify.git), [spotx](https://github.com/SpotX-Official/SpotX-Bash), Spotify
 
 # Problemi e domande
 
