@@ -79,7 +79,7 @@ Elencate sotto, sono alcune delle configurazioni che uso quotidianamente.
 
 - Vim, [`~/.vimrc`](https://files.le0nardo.dev/configs/_vimrc)
 
-- Alacritty, [`~/.config/kitty/kitty.conf`](https://files.le0nardo.dev/configs/kitty.conf)
+- Alacritty, [`~/.config/kitty/kitty.conf`](https://files.le0nardo.dev/configs/alacritty.toml)
 
 - Touchpad, [`/etc/X11/xorg.conf.d/30-touchpad.conf`](https://files.le0nardo.dev/configs/touchpad.conf)
 
