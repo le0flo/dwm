@@ -2,7 +2,7 @@
 
 /* appearance */
 static const unsigned int borderpx = 2;
-static const unsigned int gappx = 7;
+static const unsigned int gappx = 10;
 static const unsigned int snap = 10;
 static const int showbar = 1;
 static const int topbar = 0;
@@ -17,15 +17,15 @@ static const char col_gray2[] = "#444444";
 static const char col_gray3[] = "#bbbbbb";
 static const char col_gray4[] = "#eeeeee";
 static const char col_cyan[] = "#005577";
-static const char col_green[] = "#97bb72";
+static const char col_red[] = "#eb3434";
 
 static const char *colors[][3] = {
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
-	[SchemeSel]  = { col_gray1, col_green,  col_green  },
+	[SchemeSel]  = { col_gray1, col_red,  col_red  },
 };
 
 /* tagging */
-static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
+static const char *tags[] = { "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX" };
 
 /* rules */
 static const Rule rules[] = { 0 };
@@ -53,10 +53,9 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0";
 
-static const char *termcmd[] = { "kitty", NULL };
+static const char *termcmd[] = { "alacritty", NULL };
 static const char *dmenucmd[] = { "dmenu_drun", "-c", "-l", "10", "-m", dmenumon, NULL };
-static const char *scrot[] = { "scrot", "/home/user/Pictures/\%Y-\%m-\%d_\%H-\%M-\%S.png", NULL };
-static const char *scrotarea[] = { "scrot", "/home/user/Pictures/\%Y-\%m-\%d_\%H-\%M-\%S.png", "-s", NULL };
+static const char *scrot[] = { "scrot", "/home/leo/Pictures/\%Y-\%m-\%d_\%H-\%M-\%S.png", "-s", NULL };
 
 static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_Return,	spawn,			{.v = termcmd } },
@@ -70,7 +69,6 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_t,		setlayout,		{.v = &layouts[0]} },
 	{ MODKEY,                       XK_f,		setlayout,		{.v = &layouts[1]} },
 	{ MODKEY,                       XK_Print,	spawn,			{.v = scrot } },
-	{ MODKEY|ShiftMask,             XK_Print,	spawn,			{.v = scrotarea } },
 	{ MODKEY,                       XK_Tab,		view,			{.ui = ~0 } },
 	{ MODKEY,                       XK_b,		togglebar,		{0} },
 	{ MODKEY|ShiftMask,             XK_k,		killclient,		{0} },
