@@ -1,19 +1,19 @@
 # 👨‍💻 Dynamic Window Manager
 
-Un window manager minimale e personalizzabile
+Un window manager minimale e personalizzabile.
 
-## Prerequisiti 
+## Dipendenze 
 
-Quà sotto trovate una lista di pacchetti per la compilazione
+Lista delle dipendenze fondamentali per la compilazione.
 
 ```sh
 sudo pacman -S base-devel xorg-server xorg-xinit xorg-xinput xorg-xsetroot libinput libx11 libxinerama libxft
 ```
 
-Quà invece una serie di pacchetti necessari per questa build di dwm
+Lista di pacchetti necessari per questa build di dwm.
 
 ```sh
-sudo pacman -S kitty feh dex ttf-firacode-nerd
+sudo pacman -S scrot alacritty feh dex ttf-firacode-nerd
 ```
 
 ## Installazione
@@ -23,13 +23,17 @@ cd dwm
 sudo make clean install
 ```
 
-### Consigliato
+Infine per installare dmenu:
 
-Questa personalizzazione di dwm utilizza dmenu per aprire le varie applicazioni, perciò consigio vivamente di scaricare ed installare la giusta versione di [dmenu quì](https://github.com/le0flo/dmenu) prima di continuare con la configurazione del wm.
+```sh
+git clone https://github.com/le0flo/dmenu.git
+cd dmenu
+sudo make clean install
+```
 
 ## Configurazione
 
-Il comando precedente dovrebbe aver installato dwm nel sistema. Per eseguirlo con xinit, inserire il seguente codice nel file `~/.xinitrc`.
+Prima si definisce il file di startup del X server (`~/.xinitrc`).
 
 ```sh
 # Compositor
@@ -44,36 +48,24 @@ Il comando precedente dovrebbe aver installato dwm nel sistema. Per eseguirlo co
 exec dwm
 ```
 
-Per avviare xinit al login dell'utente, inserite questo snippet di codice nel file `~/.bash_profile`.
+Poi si dice alla shell di avviare l'X server al login dell'utente (`~/.bash_profile`).
 
 ```sh
-# Avvia X11
+# X11
 
 if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
-	startx
+	startx &> /dev/null
 fi
 ```
 
-Per avere un prompt carino, sostituisci la seguente linea nel file `~/.bashrc`.
+Infine, organizziamo il `.bashrc` con tutto ciò che ci serve.
 
 ```sh
-# Prompt
-
-PS1="\[\e[01;38;5;106m\]\u\[\e[01;38;5;142m\]@\[\e[01;38;5;143m\]\h \[\e[01;38;5;39m\]\w \[\033[00;0m\]$ "
-```
-
-Per risolvere alcuni problemi con programmi (e.g. IntelliJ IDEA), esportate la variabile di ambiente nel file `~/.bashrc`.
-
-```sh
-# Variabili di ambiente
+# Env
 
 export _JAVA_AWT_WM_NONREPARENTING=1
 export GIT_EDITOR=vim
-```
 
-Alcuni alias utili per miglioramenti nell'esperienza di utilizzo, da inserire nel file `~/.bashrc`.
-
-```sh
 # Aliases
 
 alias ls='ls --color=auto'
@@ -83,26 +75,21 @@ alias ssh='TERM=xterm-256color ssh'
 alias shutdown='shutdown -h now'
 ```
 
-Io come al solito incito alle persone di studiarsi i programmi e personalizzarseli a mano, ma capisco che non c'è sempre la voglia, parte del motivo per cui ho reso pubblica questa repo.
-Detto questo, ecco una lista di configurazioni che uso e tengo aggiornate.
+Elencate sotto, sono alcune delle configurazioni che uso quotidianamente.
 
 - Vim, [`~/.vimrc`](https://files.le0nardo.dev/configs/_vimrc)
 
-- Kitty, [`~/.config/kitty/kitty.conf`](https://files.le0nardo.dev/configs/kitty.conf)
-
-- Picom, [`~/.config/picom/picom.conf`](https://files.le0nardo.dev/configs/picom.conf)
+- Alacritty, [`~/.config/kitty/kitty.conf`](https://files.le0nardo.dev/configs/kitty.conf)
 
 - Touchpad, [`/etc/X11/xorg.conf.d/30-touchpad.conf`](https://files.le0nardo.dev/configs/touchpad.conf)
 
-## Miglioramenti
-
 ### Orologio
 
-Mettere il seguente script nel file `/var/dwm/time.sh` e togliere il commento nel file `~/.xinitrc` dove indicato.
+Inserire il seguente contenuto nel file `/var/dwm/time.sh`.
 
 ```sh
 while true; do
-	xsetroot -name "⏰ $(date '+%H:%M:%S')"
+	xsetroot -name "$(date)"
 	sleep 1
 done
 ```
@@ -110,23 +97,18 @@ done
 ### Sfondi
 
 Creare la cartella `/var/backgrounds` ed intestarla al proprio utente.
+Una volta fatto, basterà mettere gli sfondi in tale cartella e dichiarare lo sfondo scelto nel file `~/.xinitrc`.
 
-```sh
-sudo chown -R user:user /var/backgrounds
-```
+### SMB share
 
-Una volta fatto, cercate l'immagine che preferite ed inseritela nella cartella. Per impostare tale immagine come sfondo basta cambiare la linea apposita nel file `~/.xinitrc`.
-
-### Samba share
-
-Per configurare un fileshare samba, appendete alla fine del file `/etc/fstab` le seguenti istruzioni.
+Per connettere un SMB share, appendere alla fine del file `/etc/fstab` le seguenti istruzioni.
 
 ```conf
-# Samba share
+# SMB
 //example.com/share	/mnt/privato	cifs	noauto,uid=user,credentials=/home/user/.config/smb/share.conf,x-systemd.automount,x-systemd.device-timeout=10	0 0
 ```
 
-Successivamente salvare le credenziali nel file `~/.config/smb/share.conf`.
+Per poi salvare le credenziali nel file `~/.config/smb/share.conf`.
 
 ```conf
 username=user
