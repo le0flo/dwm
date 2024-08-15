@@ -55,7 +55,9 @@ static char dmenumon[2] = "0";
 
 static const char *termcmd[] = { "alacritty", NULL };
 static const char *dmenucmd[] = { "dmenu_drun", "-c", "-l", "10", "-m", dmenumon, NULL };
+static const char *dmenupanel[] = { "dmenu_panel", "-c", "-l", "10", "-m", dmenumon, NULL };
 static const char *scrot[] = { "scrot", "/home/leo/Pictures/\%Y-\%m-\%d_\%H-\%M-\%S.png", "-s", NULL };
+
 
 static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_Return,	spawn,			{.v = termcmd } },
@@ -72,6 +74,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_Tab,		view,			{.ui = ~0 } },
 	{ MODKEY,                       XK_b,		togglebar,		{0} },
 	{ MODKEY|ShiftMask,             XK_k,		killclient,		{0} },
+	{ MODKEY,						XK_q,		spawn,			{.v = dmenupanel } },
 	{ MODKEY|ShiftMask,				XK_q,		quit,			{0} },
 	TAGKEYS(						XK_1,						0)
 	TAGKEYS(						XK_2,						1)
