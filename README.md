@@ -77,11 +77,11 @@ alias shutdown='shutdown -h now'
 
 Elencate sotto, sono alcune delle configurazioni che uso quotidianamente.
 
-- Vim, [`~/.vimrc`](https://files.le0nardo.dev/configs/_vimrc)
+- Vim, [`~/.vimrc`](https://files.le0nardo.dev/configs/.vimrc)
 
-- Alacritty, [`~/.config/kitty/kitty.conf`](https://files.le0nardo.dev/configs/alacritty.toml)
+- Alacritty, [`~/.config/alacritty/alacritty.toml`](https://files.le0nardo.dev/configs/alacritty.toml)
 
-- Touchpad, [`/etc/X11/xorg.conf.d/30-touchpad.conf`](https://files.le0nardo.dev/configs/touchpad.conf)
+- Touchpad, [`/etc/X11/xorg.conf.d/30-touchpad.conf`](https://files.le0nardo.dev/configs/30-touchpad.conf)
 
 ### Orologio
 
@@ -98,22 +98,6 @@ done
 
 Creare la cartella `/var/backgrounds` ed intestarla al proprio utente.
 Una volta fatto, basterà mettere gli sfondi in tale cartella e dichiarare lo sfondo scelto nel file `~/.xinitrc`.
-
-### SMB share
-
-Per connettere un SMB share, appendere alla fine del file `/etc/fstab` le seguenti istruzioni.
-
-```conf
-# SMB
-//example.com/share	/mnt/privato	cifs	noauto,uid=user,credentials=/home/user/.config/smb/share.conf,x-systemd.automount,x-systemd.device-timeout=10	0 0
-```
-
-Per poi salvare le credenziali nel file `~/.config/smb/share.conf`.
-
-```conf
-username=user
-password=password
-```
 
 # Problemi e domande
 
