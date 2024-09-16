@@ -1,4 +1,4 @@
-# 👨‍💻 Dynamic Window Manager
+# Dynamic Window Manager
 
 Un window manager minimale e personalizzabile.
 
