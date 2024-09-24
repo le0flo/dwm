@@ -7,7 +7,7 @@ Un window manager minimale e personalizzabile.
 Lista delle dipendenze fondamentali per la compilazione.
 
 ```sh
-sudo pacman -S base-devel xorg-server xorg-xinit xorg-xinput xorg-xsetroot libinput libx11 libxinerama libxft
+sudo pacman -S base-devel xorg-server xorg-xinit xorg-xinput libinput libx11 libxinerama libxft
 ```
 
 Lista di pacchetti necessari per questa build di dwm.
