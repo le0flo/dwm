@@ -2,7 +2,7 @@
 
 Un window manager minimale e personalizzabile.
 
-## Dipendenze 
+### Dipendenze 
 
 Lista delle dipendenze fondamentali per la compilazione.
 
@@ -16,7 +16,7 @@ Lista di pacchetti necessari per questa build di dwm.
 sudo pacman -S scrot alacritty feh dex ttf-firacode-nerd
 ```
 
-## Installazione
+### Installazione
 
 ```sh
 cd dwm
@@ -31,7 +31,7 @@ cd dmenu
 sudo make clean install
 ```
 
-## Configurazione
+### Configurazione
 
 Prima si definisce il file di startup del X server (`~/.xinitrc`).
 
@@ -39,11 +39,8 @@ Prima si definisce il file di startup del X server (`~/.xinitrc`).
 # Compositor
 #picom -b
 
-# Sfondi
+# Background
 #feh --no-fehbg --bg-fill "/var/backgrounds/bg.jpg"
-
-# Status
-#/var/dwm/time.sh >> /dev/null 2>&1 &
 
 exec dwm
 ```
@@ -77,28 +74,8 @@ alias shutdown='shutdown -h now'
 
 Elencate sotto, sono alcune delle configurazioni che uso quotidianamente.
 
-- Vim, [`~/.vimrc`](https://files.le0nardo.dev/configs/.vimrc)
+- Vim, [`~/.vimrc`](https://files.leoflo.me/config/others/.vimrc)
 
-- Alacritty, [`~/.config/alacritty/alacritty.toml`](https://files.le0nardo.dev/configs/alacritty.toml)
+- Alacritty, [`~/.config/alacritty/alacritty.toml`](https://files.leoflo.me/config/alacritty/alacritty.toml)
 
-- Touchpad, [`/etc/X11/xorg.conf.d/30-touchpad.conf`](https://files.le0nardo.dev/configs/30-touchpad.conf)
-
-### Orologio
-
-Inserire il seguente contenuto nel file `/var/dwm/time.sh`.
-
-```sh
-while true; do
-	xsetroot -name "$(date)"
-	sleep 1
-done
-```
-
-### Sfondi
-
-Creare la cartella `/var/backgrounds` ed intestarla al proprio utente.
-Una volta fatto, basterà mettere gli sfondi in tale cartella e dichiarare lo sfondo scelto nel file `~/.xinitrc`.
-
-# Problemi e domande
-
-Se avete problemi, dubbi o domande in generale sul progetto, aprite una issue nella repository.
+- Touchpad, [`/etc/X11/xorg.conf.d/30-touchpad.conf`](https://files.leoflo.me/config/others/30-touchpad.conf)
