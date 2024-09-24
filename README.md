@@ -13,7 +13,7 @@ sudo pacman -S base-devel xorg-server xorg-xinit xorg-xinput libinput libx11 lib
 Pacchetti necessari per questa build di dwm:
 
 ```sh
-sudo pacman -S flameshot alacritty feh dex ttf-firacode-nerd
+sudo pacman -S alacritty feh dex ttf-firacode-nerd
 ```
 
 ### Installazione
