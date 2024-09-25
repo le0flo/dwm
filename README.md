@@ -61,6 +61,7 @@ export GIT_EDITOR=nvim
 
 # Aliases
 
+alias vim='nvim'
 alias ls='ls --color=auto'
 alias ll='ls --color=auto -al'
 alias grep='grep --color=auto'
