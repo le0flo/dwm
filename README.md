@@ -2,7 +2,7 @@
 
 Un window manager minimale e personalizzabile.
 
-### Dipendenze 
+### Dipendenze
 
 Dipendenze fondamentali per la compilazione:
 
@@ -23,13 +23,13 @@ cd dwm
 sudo make clean install
 ```
 
-**Attenzione**
+**Importante**
 
-Questo programma necessita della mia versione di dmenu, perciò assicurati di scaricarla [quì](https://github.com/le0flo/dmenu).
+Scarica la mia versione di dmenu [quì](https://github.com/le0flo/dmenu).
 
 ### Configurazione
 
-Prima definisci il file di avvio per l'X server (`~/.xinitrc`).
+Definisci il file di avvio per l'X server (`~/.xinitrc`).
 
 ```sh
 # Compositor
@@ -41,7 +41,7 @@ Prima definisci il file di avvio per l'X server (`~/.xinitrc`).
 exec dwm
 ```
 
-Poi assegna l'X server all'avvio automatico modificando il profilo di bash (`~/.bash_profile`).
+Appendi al file `.bashrc`, le seguenti definizioni:
 
 ```sh
 # X11
@@ -49,11 +49,7 @@ Poi assegna l'X server all'avvio automatico modificando il profilo di bash (`~/.
 if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
 	startx &> /dev/null
 fi
-```
 
-In aggiunta, puoi appendere all'esistente `.bashrc`, le seguenti definizioni:
-
-```sh
 # Env
 
 export _JAVA_AWT_WM_NONREPARENTING=1
@@ -69,10 +65,4 @@ alias ssh='TERM=xterm-256color ssh'
 alias shutdown='shutdown -h now'
 ```
 
-Elencate sotto, sono alcune delle configurazioni che uso quotidianamente.
-
-- Vim, [`~/.vimrc`](https://files.leoflo.me/configs/others/_vimrc)
-
-- Alacritty, [`~/.config/alacritty/alacritty.toml`](https://files.leoflo.me/configs/alacritty/alacritty.toml)
-
-- Touchpad, [`/etc/X11/xorg.conf.d/30-touchpad.conf`](https://files.leoflo.me/configs/others/30-touchpad.conf)
+Le configurazioni che utilizzo le potete trovare [quì](https://github.com/le0flo/configs).
