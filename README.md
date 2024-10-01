@@ -50,11 +50,6 @@ if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
 	startx &> /dev/null
 fi
 
-# Env
-
-export _JAVA_AWT_WM_NONREPARENTING=1
-export GIT_EDITOR=nvim
-
 # Aliases
 
 alias vim='nvim'
@@ -63,6 +58,11 @@ alias ll='ls --color=auto -al'
 alias grep='grep --color=auto'
 alias ssh='TERM=xterm-256color ssh'
 alias shutdown='shutdown -h now'
+
+# Env
+
+export _JAVA_AWT_WM_NONREPARENTING=1
+export GIT_EDITOR=nvim
 ```
 
 Le configurazioni che utilizzo le potete trovare [quì](https://github.com/le0flo/configs).
