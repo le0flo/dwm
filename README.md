@@ -29,19 +29,19 @@ Scarica la mia versione di dmenu [quì](https://github.com/le0flo/dmenu).
 
 ### Configurazione
 
-Definisci il file di avvio per l'X server (`~/.xinitrc`).
+Crea il file di avvio per l'X server (`~/.xinitrc`).
 
 ```sh
 # Compositor
 #picom -b
 
 # Background
-#feh --no-fehbg --bg-fill "/var/backgrounds/bg.jpg"
+#feh --no-fehbg --bg-fill "$HOME/.config/backgrounds/bg.jpg"
 
 exec dwm
 ```
 
-Appendi al file `.bashrc`, le seguenti definizioni:
+Aggiorna il file `.bashrc`, appendendo le seguenti definizioni:
 
 ```sh
 # X11
