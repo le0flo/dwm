@@ -29,7 +29,7 @@ Scarica la mia versione di dmenu [quì](https://github.com/le0flo/dmenu).
 
 ### Configurazione
 
-Crea il file di avvio per l'X server (`~/.xinitrc`).
+Crea il file di avvio per l'X server (`~/.xinitrc`):
 
 ```sh
 # Background
