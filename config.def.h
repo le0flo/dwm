@@ -9,7 +9,7 @@ static const int topbar = 0;
 static const int user_bh = 0;
 
 /* fonts */
-static const char *fonts[] = { "FiraCode Nerd Font Mono:style=Medium:size=12" };
+static const char *fonts[] = { "FiraCode Nerd Font Mono:style=Medium:size=16" };
 
 /* colors */
 static const char col_gray1[] = "#222222";
@@ -20,12 +20,13 @@ static const char col_cyan[] = "#005577";
 static const char col_red[] = "#eb3434";
 
 static const char *colors[][3] = {
-	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
-	[SchemeSel]  = { col_gray1, col_red,  col_red  },
+	[SchemeNorm] = { col_gray4, col_gray1, col_gray3 },
+	[SchemeSel]  = { col_red, col_red,  col_red  },
+	[SchemeTitle] = { col_gray2, col_gray1, col_gray3 },
 };
 
 /* tagging */
-static const char *tags[] = { "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX" };
+static const char *tags[] = { "\uf4c3", "\uf4c3", "\uf4c3", "\uf4c3", "\uf4c3", "\uf4c3", "\uf4c3", "\uf4c3", "\uf4c3" };
 
 /* rules */
 static const Rule rules[] = { 0 };
@@ -54,8 +55,8 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0";
 
 static const char *termcmd[] = { "alacritty", NULL };
-static const char *dmenucmd[] = { "dmenu_drun", "-l", "5", "-m", dmenumon, NULL };
-static const char *dmenupanel[] = { "dmenu_panel", "-l", "5", "-m", dmenumon, NULL };
+static const char *dmenucmd[] = { "dmenu_drun", "-c", "-l", "5", "-m", dmenumon, NULL };
+static const char *dmenupanel[] = { "dmenu_panel", "-c", "-l", "5", "-m", dmenumon, NULL };
 
 static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_Return,	spawn,			{.v = termcmd } },
@@ -98,4 +99,3 @@ static const Button buttons[] = {
 	{ ClkTagBar,            MODKEY,         Button1,        tag,            {0} },
 	{ ClkTagBar,            MODKEY,         Button3,        toggletag,      {0} },
 };
-
