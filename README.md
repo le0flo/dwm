@@ -4,7 +4,7 @@ Un window manager minimale e personalizzabile.
 
 ### Dipendenze
 
-Dipendenze fondamentali per la compilazione:
+Pacchetti fondamentali per la compilazione:
 
 ```sh
 sudo pacman -S base-devel xorg-server xorg-xinit xorg-xinput libinput libx11 libxinerama libxft
