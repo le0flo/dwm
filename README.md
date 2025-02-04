@@ -1,7 +1,5 @@
 # Dynamic Window Manager
 
-Un window manager minimale e personalizzabile.
-
 ### Dipendenze
 
 Pacchetti fondamentali per la compilazione:
@@ -15,8 +13,6 @@ Pacchetti necessari per questa build di dwm:
 ```sh
 sudo pacman -S alacritty feh dex ttf-firacode-nerd
 ```
-
-Serve anche la mia versione di [dmenu](https://github.com/le0flo/dmenu)
 
 ### Installazione
 
