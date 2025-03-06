@@ -2,14 +2,14 @@
 
 /* appearance */
 static const unsigned int borderpx = 2;
-static const unsigned int gappx = 10;
+static const unsigned int gappx = 0;
 static const unsigned int snap = 10;
 static const int showbar = 1;
 static const int topbar = 0;
 static const int user_bh = 0;
 
 /* fonts */
-static const char *fonts[] = { "FiraCode Nerd Font Mono:style=Medium:size=16" };
+static const char *fonts[] = { "SF Pro:style=Regular:size=16" };
 
 /* colors */
 static const char col_gray1[] = "#222222";
@@ -17,7 +17,7 @@ static const char col_gray2[] = "#444444";
 static const char col_gray3[] = "#bbbbbb";
 static const char col_gray4[] = "#eeeeee";
 static const char col_cyan[] = "#005577";
-static const char col_red[] = "#eb3434";
+static const char col_red[] = "#f3938e";
 
 static const char *colors[][3] = {
 	[SchemeNorm] = { col_gray4, col_gray1, col_gray3 },
@@ -26,7 +26,7 @@ static const char *colors[][3] = {
 };
 
 /* tagging */
-static const char *tags[] = { "\uf4c3", "\uf4c3", "\uf4c3", "\uf4c3", "\uf4c3", "\uf4c3", "\uf4c3", "\uf4c3", "\uf4c3" };
+static const char *tags[] = { "1", "2", "3", "4" };
 
 /* rules */
 static const Rule rules[] = { 0 };
@@ -78,11 +78,6 @@ static const Key keys[] = {
 	TAGKEYS(						XK_2,						1)
 	TAGKEYS(						XK_3,						2)
 	TAGKEYS(						XK_4,						3)
-	TAGKEYS(						XK_5,						4)
-	TAGKEYS(						XK_6,						5)
-	TAGKEYS(						XK_7,						6)
-	TAGKEYS(						XK_8,						7)
-	TAGKEYS(						XK_9,						8)
 };
 
 /* button definitions */
