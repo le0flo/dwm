@@ -7,8 +7,8 @@ static const int showbar = 1;           /* 0 means no bar */
 static const int topbar = 1;            /* 0 means bottom bar */
 
 /* fonts */
-static const char *fonts[] = { "monospace:size=10" };
-static const char dmenufont[] = "monospace:size=10";
+static const char *fonts[] = { "Iosevka Nerd Font Mono:size=14" };
+static const char dmenufont[] = "Iosevka Nerd Font Mono:size=14";
 
 /* gaps */
 static const unsigned int gappih = 20;      /* horiz inner gap between windows */
