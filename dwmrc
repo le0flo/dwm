@@ -1,0 +1,16 @@
+#!/bin/sh
+
+# Display
+xrandr --output eDP-1 --mode 1920x1080 --rate 60
+
+# Background
+wal -R
+
+# Keyboard
+setxkbmap it
+
+# Syncthing
+syncthing --no-browser &
+
+# DWM
+dwmblocks & dwm
